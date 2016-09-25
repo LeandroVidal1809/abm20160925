@@ -51,6 +51,32 @@ function AgregarPersona()
    },function(error){
 
    });
+
+
    
 
+}
+
+function BorrarPersona(persona)
+{
+	if(!confirm("Desea Eliminar la persona"+persona.nombre+" "+persona.apellido+"??"))
+	{return;}
+	var pagina = "./nexo.php"
+
+	
+   $.ajax({
+   	url:pagina,
+   	type:"post",
+   	datatype:"json",
+   	data:{queHacer:"eliminar",persona:persona}}).then
+   (function(exito){
+   alert(exito);
+   //	alert(exito);
+   	alert("Eliminado Exitosamente!");
+	
+   },function(error){
+
+   });
+
+   MostrarGrilla();
 }

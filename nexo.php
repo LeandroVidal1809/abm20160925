@@ -40,12 +40,20 @@ $quehago=$_POST['queHacer'];
 								<td>".$Personas->GetNombre()."</td>
 								<td>".$Personas->GetApellido()."</td>
 								<td>".$Personas->GetDni()."</td>
+
+							<td><input type='button' value='Eliminar' class='MiBotonUTN' id='btnEliminar' onclick='BorrarPersona($pers)' />
+									</td>
 								</tr>";
 						}		
 						$plantilla .= '</table>';		
 		
 		echo $plantilla;
 		break;
+
+				case 'eliminar':
+				$obj = isset($_POST['persona']) ? json_decode(json_encode($_POST['persona'])) : NULL;
+					
+				persona::Eliminar($obj->dni);
 
 		}
 

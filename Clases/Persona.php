@@ -91,5 +91,27 @@
 					fclose($miArchivo);
 					return $listaDePersonas;
 			}
+
+			public static function Eliminar($Dni)
+			{
+				
+				$listaDePersonasLeidas = Persona::TraerTodasLasPersonas();
+				$listaDePersonas= array();
+
+				for($i=0;$i<count($listaDePersonasLeidas);$i++)
+				{ 
+						if($listaDePersonasLeidas[$i]->dni == $Dni){continue;}
+						$listaDePersonas[$i]=$listaDePersonasLeidas[$i];
+				}
+
+				$miArchivo= fopen("./Personas.txt","w");
+				foreach ($listaDePersonas as $item ) {
+					fwrite($miArchivo,$item->ToString());
+				}
+
+				fclose($miArchivo);
+
+
+			}
 		}
  ?>
