@@ -113,5 +113,28 @@
 
 
 			}
+
+			public static function Modificar($pers)
+			{
+				
+				$listaDePersonasLeidas = Persona::TraerTodasLasPersonas();
+				$listaDePersonas= array();
+
+				for($i=0;$i<count($listaDePersonasLeidas);$i++)
+				{ 
+						if($listaDePersonasLeidas[$i]->dni == $Dni){continue;}
+						$listaDePersonas[$i]=$listaDePersonasLeidas[$i];
+				}
+				array_push($listaDePersonas,$pers);
+				var_dump($listaDePersonas);
+				$miArchivo = fopen("archivos/productos.txt", "w");
+		
+		//ESCRIBO EN EL ARCHIVO
+		foreach($ListaDeProductos AS $item){
+			$cant = fwrite($miArchivo, $item->ToString());
+			
+			}
+			fclose($miArchivo);
+			}
 		}
  ?>

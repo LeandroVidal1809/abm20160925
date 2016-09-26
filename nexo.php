@@ -43,6 +43,7 @@ $quehago=$_POST['queHacer'];
 
 							<td><input type='button' value='Eliminar' class='MiBotonUTN' id='btnEliminar' onclick='BorrarPersona($pers)' />
 									</td>
+							<td><input type='button' value='Modificar'  id='btnModificar' onclick='Modificar($pers)' /></td>
 								</tr>";
 						}		
 						$plantilla .= '</table>';		
@@ -54,6 +55,14 @@ $quehago=$_POST['queHacer'];
 				$obj = isset($_POST['persona']) ? json_decode(json_encode($_POST['persona'])) : NULL;
 					
 				persona::Eliminar($obj->dni);
+				break;
+
+		case 'modificar':
+			$obj = isset($_POST['persona']) ? json_decode(json_encode($_POST['persona'])) : NULL;
+			$pers= new persona($obj->nombre,$obj->apellido,$obj->dni);
+
+			persona::modificar($pers);
+
 
 		}
 

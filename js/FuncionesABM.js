@@ -80,3 +80,25 @@ function BorrarPersona(persona)
 
    MostrarGrilla();
 }
+function Modificar(persona)
+{
+		var pagina= "./nexo.php";
+	$("#Nombre").val(persona.nombre);
+	$("#Apellido").val(persona.apellido);
+	$("#dni").val(persona.dni);
+	$("#hdnQueHacer").val("modificar");
+
+	$.ajax({
+   	url:pagina,
+   	type:"post",
+   	datatype:"json",
+   	data:{queHacer:"eliminar",persona:persona}}).then
+   (function(exito){
+   alert(exito);
+   //	alert(exito);
+   	alert("Eliminado Exitosamente!");
+	
+   },function(error){
+
+   });
+}
