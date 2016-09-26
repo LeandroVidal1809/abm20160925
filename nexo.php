@@ -7,7 +7,7 @@ $quehago=$_POST['queHacer'];
 			case 'Agregar':
 				# ...
 				$obj=$_POST['persona'];
-				var_dump($obj);
+				//var_dump($obj);
 				$pers= new persona($obj["nombre"],$obj["apellido"],$obj["dni"]);
 
 				
@@ -65,6 +65,7 @@ $quehago=$_POST['queHacer'];
 
 
 		}
+
 
 
 ?>

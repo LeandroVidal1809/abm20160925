@@ -126,7 +126,7 @@
 						$listaDePersonas[$i]=$listaDePersonasLeidas[$i];
 				}
 				array_push($listaDePersonas,$pers);
-				var_dump($listaDePersonas);
+				//var_dump($listaDePersonas);
 				$miArchivo = fopen("archivos/productos.txt", "w");
 		
 		//ESCRIBO EN EL ARCHIVO

@@ -21,7 +21,7 @@ function MostrarGrilla()
 		$("#GrillaPersonas").html(exito)
 	},
 	function(error){
-		alert("algo pasa");
+		//alert("algo pasa");
 	});
 
 }
@@ -46,8 +46,8 @@ function AgregarPersona()
    .then(function(exito){
    
    //	alert(exito);
-   	alert("Ingresado Exitosamente!");
-	   	$("#principal").html(exito);
+  // 	alert("Ingresado Exitosamente!");
+	 //  	$("#principal").html(exito);
    },function(error){
 
    });
@@ -70,9 +70,9 @@ function BorrarPersona(persona)
    	datatype:"json",
    	data:{queHacer:"eliminar",persona:persona}}).then
    (function(exito){
-   alert(exito);
+   //alert(exito);
    //	alert(exito);
-   	alert("Eliminado Exitosamente!");
+   //	alert("Eliminado Exitosamente!");
 	
    },function(error){
 
@@ -94,11 +94,14 @@ function Modificar(persona)
    	datatype:"json",
    	data:{queHacer:"eliminar",persona:persona}}).then
    (function(exito){
-   alert(exito);
+  // alert(exito);
    //	alert(exito);
-   	alert("Eliminado Exitosamente!");
+   //	alert("Eliminado Exitosamente!");
 	
    },function(error){
 
    });
+
+   
+
 }
