@@ -34,13 +34,26 @@ function AgregarPersona()
 	var nombre=$("#Nombre").val();
 	var apellido=$("#Apellido").val();
 	var dni=$("#dni").val();
+	
 
 	var persona={};
 
 	persona.nombre= nombre;
 	persona.apellido=apellido;
 	persona.dni=dni;
-
+	
+		if(persona.nombre==""){
+		alert("Debe Ingresar Nombre");
+		return;
+	}
+	if(persona.apellido==""){
+		alert("Debe Ingresar Apellido");
+		return;
+	}
+	if(persona.dni==""){
+		alert("Debe Ingresar Dni");
+		return;
+	}
 
    $.ajax({url:pagina,type:"post",data:{queHacer:"Agregar",persona:persona}})
    .then(function(exito){
